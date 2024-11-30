@@ -12,8 +12,8 @@ type Client struct {
 	Name      string
 	Email     string
 	Accounts  []*Account
-	CreatedAt string
-	UpdatedAt string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 func NewClient(name string, email string) (*Client, error) {
@@ -21,8 +21,8 @@ func NewClient(name string, email string) (*Client, error) {
 		ID:        uuid.New().String(),
 		Name:      name,
 		Email:     email,
-		CreatedAt: time.Now().String(),
-		UpdatedAt: time.Now().String(),
+		CreatedAt: time.Now(),
+		UpdatedAt: time.Now(),
 	}
 
 	if err := client.Validate(); err != nil {
@@ -46,7 +46,7 @@ func (c *Client) Validate() error {
 func (c *Client) Update(name string, email string) error {
 	c.Name = name
 	c.Email = email
-	c.UpdatedAt = time.Now().String()
+	c.UpdatedAt = time.Now()
 	err := c.Validate()
 	if err != nil {
 		return err
