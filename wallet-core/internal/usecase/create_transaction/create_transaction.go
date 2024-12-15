@@ -1,8 +1,8 @@
 package create_transaction
 
 import (
-	"github.com.br/devfullcycle/fc-ms-wallet/wallet-core/gateway"
 	"github.com.br/devfullcycle/fc-ms-wallet/wallet-core/internal/entity"
+	gateway2 "github.com.br/devfullcycle/fc-ms-wallet/wallet-core/internal/gateway"
 )
 
 type CreateTransactionInputDTO struct {
@@ -16,11 +16,11 @@ type CreateTransactionOutputDTO struct {
 }
 
 type CreateTransactionUseCase struct {
-	TransactionGateway gateway.TransactionGateway
-	AccountGateway     gateway.AccountGateway
+	TransactionGateway gateway2.TransactionGateway
+	AccountGateway     gateway2.AccountGateway
 }
 
-func NewCreateTransactionUseCase(transactionGateway gateway.TransactionGateway, accountGateway gateway.AccountGateway) *CreateTransactionUseCase {
+func NewCreateTransactionUseCase(transactionGateway gateway2.TransactionGateway, accountGateway gateway2.AccountGateway) *CreateTransactionUseCase {
 	return &CreateTransactionUseCase{
 		TransactionGateway: transactionGateway,
 		AccountGateway:     accountGateway,

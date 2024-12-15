@@ -1,8 +1,8 @@
 package create_client
 
 import (
-	"github.com.br/devfullcycle/fc-ms-wallet/wallet-core/gateway"
 	"github.com.br/devfullcycle/fc-ms-wallet/wallet-core/internal/entity"
+	"github.com.br/devfullcycle/fc-ms-wallet/wallet-core/internal/gateway"
 	"time"
 )
 
